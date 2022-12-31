@@ -77,7 +77,7 @@ public class Board {
                 }
             }
         } else {
-            for (int i = col1; i < col2; i++) {
+            for (int i = col2; i < col1; i++) {
                 if (row1 < row2)
                     for (int j = row1; j < row2; j++) {
                         count++;
@@ -89,10 +89,7 @@ public class Board {
                 }
             }
         }
-        if (count < 1) {
-            return false;
-
-        } else return true;
+        return count >= 1;
     }
 }
 
