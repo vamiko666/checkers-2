@@ -10,45 +10,27 @@ public class Game {
         boolean gameNotOver = true;
         Checker[][] board = game.getBoard();
         printBoard(board);
-        // while (gameNotOver){
-        //    int[] movement=commands();
-        //    player1.move(movement[2],movement[3],board[movement[1]][movement[0]]);
-        //    game.updateBoard();
-        //    board= game.board;
-        //    System.out.flush();
-        //    printBoard(board);
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (board[i][j] != null) {
-                    System.out.print(board[i][j].getPosition()[0] + " ");
-                    System.out.print(board[i][j].getPosition()[1] + " ");
-                    if (board[i][j].getColor().equals(Colors.BLACK)) {
-                        System.out.print("BLack\n");
-                    } else {
-                        System.out.print("Wite\n");
-                    }
-                }
-            }
-
-        }
 
 
+        player1.move(7, 6, board[7][7],game);
+        game.updateBoard();
+        board = game.board;
+        printBoard(board);
     }
 
 
     public static void printBoard(Checker[][] board) {
         for (int i = 0; i < board.length; i++) {
-            System.out.println(" - - - - - - - -");
+            System.out.println(i+" - - - - - - - -");
             System.out.print("|");
             for (int j = 0; j < board.length; j++) {
 
                 if (board[j][i] != null) {
-                    if (board[j][i].color.equals(Colors.WHITE)) {
+                    if (board[j][i].getColor().equals(Colors.WHITE)) {
 
                         System.out.print("W");
 
-                    } else if (board[j][i].color.equals(Colors.BLACK)) {
+                    } else if (board[j][i].getColor().equals(Colors.BLACK)) {
                         System.out.print("B");
                     }
                 } else {

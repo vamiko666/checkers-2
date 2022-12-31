@@ -1,15 +1,22 @@
 public class Player {
-    String name;
-    Colors color;
+    private String name;
+    private Colors color;
 
-    public Player(String name, Colors color){
-        this.color=color;
-        this.name=name;
+    public Player(String name, Colors color) {
+        this.color = color;
+        this.name = name;
     }//a
-    public void move(int row, int col,Checker checker){
+
+    public void move(int row, int col, Checker checker, Board board) {
         {
-            checker.row=row;
-            checker.column=col;
+            if (checker != null) {
+                checker.move(row, col, board);
+
+            }
         }
     }
 }
+
+
+
+

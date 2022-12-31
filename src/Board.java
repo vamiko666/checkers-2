@@ -37,7 +37,8 @@ public class Board {
         }
         return board;
     }
-//gets the board
+
+    //gets the board
     public Checker[][] getBoard() {
         return board;
     }
@@ -55,12 +56,45 @@ public class Board {
                     newBoard[row][col] = oldBoard[i][j];
 
 
-
                 }
             }
         }
         board = newBoard;
     }
 
+    public boolean isJump(int row1, int col1, int row2, int col2) {
+        int count = 0;
+        if (col1 < col2) {
+            for (int i = col1; i < col2; i++) {
+                if (row1 < row2)
+                    for (int j = row1; j < row2; j++) {
+                        count++;
+                    }
+                else {
+                    for (int j = row2; j < row1; j++) {
+                        count++;
+                    }
+                }
+            }
+        } else {
+            for (int i = col1; i < col2; i++) {
+                if (row1 < row2)
+                    for (int j = row1; j < row2; j++) {
+                        count++;
+                    }
+                else {
+                    for (int j = row2; j < row1; j++) {
+                        count++;
+                    }
+                }
+            }
+        }
+        if (count < 1) {
+            return false;
 
+        } else return true;
+    }
 }
+
+
+
