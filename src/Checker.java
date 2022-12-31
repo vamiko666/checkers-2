@@ -23,10 +23,8 @@ public class Checker {
         this.row=row;
         this.column=column;
     }
-    public  int[]getPosition(){
-        int position[]=new int[2];
-        return position;
-    }
+    public int[] getPosition() { return new int[]{row, column}; }
+
 
     public Colors getColor() {
         return color;
