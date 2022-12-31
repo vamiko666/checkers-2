@@ -39,16 +39,36 @@ public class Checker {
             if (Math.abs(row - this.row) == 1 && Math.abs(column - this.column) == 1) {
                 this.row = row;
                 this.column = column;
+
                 return true;
             } else if (Math.abs(row - this.row) == 2 && Math.abs(column - this.column) == 2) {
                 if (board.isJump(row, column, this.row, column)) {
-                    this.row=row;
-                    this.column=column;
+                    this.row = row;
+                    this.column = column;
                     return true;
 
                 }
             }
+        } else {
+            if (board.isJump(row, column, this.row, this.column)) {
+                this.row = row;
+                this.column = column;
+            }
+
         }
         return false;
+
+    }
+
+    private void CheckIsKing() {
+        if (color.equals(Colors.WHITE)) {
+            if (row == 0) {
+                setKing(true);
+            } else {
+                if (row == 7) {
+                    setKing(true);
+                }
+            }
+        }
     }
 }

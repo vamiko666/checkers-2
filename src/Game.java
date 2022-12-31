@@ -12,10 +12,11 @@ public class Game {
         printBoard(board);
 
 
-        player1.move(7, 6, board[7][7],game);
+       player1.move(6, 4, board[7][5],game);
         game.updateBoard();
         board = game.board;
         printBoard(board);
+
     }
 
 

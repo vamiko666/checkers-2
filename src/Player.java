@@ -10,7 +10,8 @@ public class Player {
     public void move(int row, int col, Checker checker, Board board) {
         {
             if (checker != null) {
-                checker.move(row, col, board);
+              checker.move(row, col, board);
+
 
             }
         }
